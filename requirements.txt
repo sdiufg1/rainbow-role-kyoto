@@ -1,1 +1,2 @@
 discord.py==1.7.3
+dnspython==2.1.0
