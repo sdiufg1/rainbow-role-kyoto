@@ -40,6 +40,7 @@ async def rainbowrole(role):
 
 @client.event
 async def on_ready():
+    print("Je suis en ligne")
     client.loop.create_task(rainbowrole(rainbowrolename))
 
 client.run(os.environ['token'])
