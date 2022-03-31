@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 import asyncio
 import random
 import os
@@ -10,7 +11,8 @@ rainbowrolename = "zz"
 delay = 5
 
 
-client = discord.Client()
+client = commands.Bot(command_prefix="*/")
+
 colours = [discord.Color.dark_orange(),discord.Color.orange(),discord.Color.dark_gold(),discord.Color.gold(),discord.Color.dark_magenta(),discord.Color.magenta(),discord.Color.red(),discord.Color.dark_red(),discord.Color.blue(),discord.Color.dark_blue(),discord.Color.teal(),discord.Color.dark_teal(),discord.Color.green(),discord.Color.dark_green(),discord.Color.purple(),discord.Color.dark_purple()]
 
 async def rainbowrole(role):
@@ -42,5 +44,8 @@ async def rainbowrole(role):
 async def on_ready():
     print("Je suis en ligne")
     client.loop.create_task(rainbowrole(rainbowrolename))
+
+
+
 
 client.run(os.environ['token'])
